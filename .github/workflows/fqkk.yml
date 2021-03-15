@@ -1,10 +1,10 @@
-name: 番茄看看
+name: fqk
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 6-12/3 * * *'
-     - cron: '30 4-10/3 * * *'
+      - cron: '0 6-12/3 * * *'
+      - cron: '30 4-10/3 * * *'
   watch:
     types: started
 jobs:
@@ -13,7 +13,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
         fqkkurl: ${{ secrets.fqkkurl }}
-        fqkkhd: ${{ secrets.fqkkhd }}  		
+        fqkkhd: ${{ secrets.fqkkhd }}
     steps:
       - name: Checkout
         run: |

@@ -1,9 +1,9 @@
-name: 燃旅视频
+name: shuqi@ziye
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/20 0-23 * * *'
+    - cron: '7 0-23 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -31,9 +31,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【燃旅视频】'
+      - name: '运行 【舒淇小说】'
         run: |
-          node Task/ranlv.js
+          node Task/shuqi.js
         env:
           RLURL: ${{ secrets.RLURL }}
           RLHEADER: ${{ secrets.RLHEADER }}

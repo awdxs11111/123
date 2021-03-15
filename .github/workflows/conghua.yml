@@ -1,13 +1,13 @@
-name: 燃旅视频
+name: 葱花视频
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/20 0-23 * * *'
+    - cron: '*/20 * * * *'
   watch:
     types: started
   repository_dispatch:
-    types: ranlv
+    types: conghua
 jobs:
   build:
 
@@ -31,9 +31,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【燃旅视频】'
+      - name: '运行 【葱花视频】'
         run: |
-          node Task/ranlv.js
+          node Task/conghua.js
         env:
           RLURL: ${{ secrets.RLURL }}
           RLHEADER: ${{ secrets.RLHEADER }}

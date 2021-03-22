@@ -1,4 +1,4 @@
-name: 燃多看点
+name: 多看点
 
 on:
   workflow_dispatch:
@@ -35,6 +35,10 @@ jobs:
         run: |
           node Task/dkdvideo.js
         env:
+          DKD_getawardbody: ${{ secrets.DKD_GETAWARDBODY }}
+          DKD_getawardbody_index: ${{ secrets.DKD_GETAWARDBODY_INDEX }}
+          DKD_dkdtokenbody: ${{ secrets.DKD_DKDTOKENBODY }}
+          DKD_dkdtokenkey: ${{ secrets.DKD_DKDTOKENKEY }}
           RLURL: ${{ secrets.RLURL }}
           RLHEADER: ${{ secrets.RLHEADER }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
